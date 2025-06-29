@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Dashboard</title>
+</head>
+<body style="font-family: sans-serif; background: #f3f3f3; text-align: center; padding-top: 50px;">
+  <h1>Dashboard Access</h1>
+  <form id="form">
+    <input type="text" id="url" placeholder="Enter Discord invite URL" style="width: 300px; padding: 10px;">
+    <button type="submit" style="padding: 10px;">Go</button>
+  </form>
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const rawUrl = document.getElementById('url').value.trim();
+      if (!rawUrl.startsWith("https://discord.com") && !rawUrl.startsWith("https://discord.gg")) {
+        alert("Only discord.com and discord.gg URLs are allowed.");
+        return;
+      }
+      window.location.href = "/uv/service/" + encodeURIComponent(rawUrl);
+    });
+  </script>
+</body>
+</html>

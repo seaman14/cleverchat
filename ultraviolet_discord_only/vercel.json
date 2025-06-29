@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/service/:match*", "destination": "/uv/service/:match*" },
+    { "source": "/uv/:match*", "destination": "/uv/:match*" },
+    { "source": "/bare/", "destination": "http://localhost:8080/" },
+    { "source": "/:match*", "destination": "/" }
+  ]
+}
